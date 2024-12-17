@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Company> companies = new ArrayList();
+        int index = 1;
 
 
         Company oranges = new Company();
@@ -42,6 +43,11 @@ public class Main {
 
         for (Company company : companies) {
             System.out.println(String.format("%s (%s - %s),%d salarié(e)s", company.libelle,company.address.cp,company.address.city,company.employees.size()));
+            index = 1;
+            for (Employee employee : company.employees) {
+                System.out.println(String.format("          salarié %d : %s %s %d ans",index,employee.prenom,employee.nom,employee.age));
+                index++;
+            }
         }
     }
 }
